@@ -71,30 +71,13 @@ Lambda + S3 + DynamoDB are provisioned automatically
 
 ✅ Check GitHub Actions tab to monitor deployment status
 
-🧪 Sample Test (Manual)
-Upload a sample .json file to the S3 bucket
-
-Lambda triggers and logs metadata
-
-Check DynamoDB for the new item
-
-📸 Example Output
-json
-Copy
-Edit
-{
-  "file_name": "sample-data.json",
-  "bucket": "mini-pipeline-upload",
-  "timestamp": "2025-07-20T10:30:00Z"
-}
-📌 To-Do (Improvements)
-🔒 Add input validation for Lambda
 
 🧪 Add unit tests for handler
 
 🔔 Add SNS/Slack alerts on failure
 
 🙌 Acknowledgements
+
 Inspired by AWS event-driven serverless architectures
 
 Terraform module patterns from community best practices
