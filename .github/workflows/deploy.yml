@@ -29,10 +29,10 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1  # Change if using different region
+          aws-region: us-east-1
 
       - name: Install zip tool
-        run: sudo apt-get install zip
+        run: sudo apt-get install -y zip
 
       - name: Package Lambda function
         run: |
@@ -42,9 +42,12 @@ jobs:
 
       - name: Terraform Init
         run: terraform init -upgrade
+        working-directory: terraform
 
       - name: Terraform Plan
         run: terraform plan
+        working-directory: terraform
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
+        working-directory: terraform
